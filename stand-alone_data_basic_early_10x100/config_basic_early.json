@@ -1,0 +1,73 @@
+{
+	"simulation" : 
+	{
+		"description" : "Basic protocol to induce noisy early-phase plasticity",
+		"short_description" : "Basic early",
+		"runtime" : 0.2,
+		"dt" : 0.2,
+		"output_period" : 1,
+		"learn_protocol": {
+			"scheme": "EXPLICIT",
+			"receivers" : [ 0 ],
+			"explicit_input" : {
+				"stim_times" : [ 10, 20, 30, 40, 50, 60, 100 ]
+			},
+			"time_start": 0,
+			"duration": 0,
+			"freq": 0,
+			"N_stim" : 0
+		},
+		"bg_protocol": {
+			"scheme": "",
+			"I_0" : 0,
+			"sigma_WN" : 0
+		}
+	},
+	"neuron" : 
+	{
+		"mechanism" : "lif",
+		"V_init" : -65.0,
+		"V_rev" : -65.0,
+		"V_reset" : -70.0,
+		"V_th" : -55.0,
+		"R_leak" : 10.0,
+		"C_mem" : 1e-9,
+		"t_ref" : 2.0
+	},
+	"synapses" : 
+	{
+		"h_0" : 4.20075,
+		"tau_syn" : 5.0,
+		"t_ax_delay" : 3.0,
+		"calcium" : 
+		{
+			"tau_Ca" : 0.0488,
+			"t_Ca_delay" : 18.8,
+			"Ca_pre" : 1.0,
+			"Ca_post" : 0.2758
+		},
+		"early_phase" : 
+		{
+			"tau_h" : 688.4,
+			"theta_p" : 3.0,
+			"theta_d" : 1.2,
+			"gamma_p" : 1645.6,
+			"gamma_d" : 313.1,
+			"sigma_pl" : 2.90436
+		},
+		"protein" : 
+		{
+			"tau_pro_c" : 3600,
+			"alpha_c" : 1,
+			"theta_pro" : 2.10037
+		},
+		"late_phase" : 
+		{
+			"tau_z" : 3600,
+			"z_max" : 1,
+			"z_min" : -0.5,
+			"theta_tag" : 0.840149
+		}
+	}
+}
+

@@ -1,0 +1,4 @@
+*.svg
+*.png
+*/*
+!*/config_*.json
